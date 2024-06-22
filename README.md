@@ -5,6 +5,7 @@
 
 ```
 git clone --recursive --shallow-submodules https://github.com/ianhbell/teqpcall.git
+```
 
 ## Build and run
 
