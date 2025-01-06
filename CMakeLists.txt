@@ -12,3 +12,12 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/externals/teqp)
 add_executable(teqpccall "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
 target_link_libraries(teqpccall teqpc)
 target_include_directories(teqpccall PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/externals/teqp/interface/C")
+
+# Force the teqpc DLL to be placed next to teqpccall executable with MSVC 
+if (MSVC)
+  set_target_properties( teqpc 
+    PROPERTIES
+    LIBRARY_OUTPUT_DIRECTORY "$<TARGET_FILE_DIR:teqpccall>"
+    RUNTIME_OUTPUT_DIRECTORY "$<TARGET_FILE_DIR:teqpccall>"
+  )
+endif()
