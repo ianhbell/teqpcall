@@ -20,6 +20,5 @@ int main(){
         if (i % 100000 == 0){
             std::cout << uid << std::endl;
         }
-        
     }
 }
